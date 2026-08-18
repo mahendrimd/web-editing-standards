@@ -1,0 +1,60 @@
+{
+  "acceptedStateFingerprint": "_HuSzBQOVikqXV_DVxxcr7Vr-pJQEtxmvl7qfW1r98w",
+  "canonicalDocument": {
+    "modelVersion": "1",
+    "serializationProfile": "json-jcs-1",
+    "acceptedState": {
+      "fingerprint": "_HuSzBQOVikqXV_DVxxcr7Vr-pJQEtxmvl7qfW1r98w",
+      "paragraphs": [
+        {
+          "id": "p1",
+          "text": "The fox waits.",
+          "formatting": [
+            {
+              "start": 0,
+              "end": 14,
+              "values": {
+                "italic": false,
+                "bold": false,
+                "underline": false,
+                "strikethrough": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "proposals": [
+      {
+        "id": "insert-1",
+        "baseFingerprint": "_HuSzBQOVikqXV_DVxxcr7Vr-pJQEtxmvl7qfW1r98w",
+        "state": "pending",
+        "kind": "insert",
+        "target": {
+          "type": "point",
+          "paragraphId": "p1",
+          "offset": 4,
+          "association": "after"
+        },
+        "content": {
+          "text": "quick ",
+          "formatting": [
+            {
+              "start": 0,
+              "end": 6,
+              "values": {
+                "italic": true,
+                "bold": false,
+                "underline": false,
+                "strikethrough": false
+              }
+            }
+          ]
+        },
+        "samePointOrder": 0
+      }
+    ]
+  },
+  "canonicalBytes": "{\"acceptedState\":{\"fingerprint\":\"_HuSzBQOVikqXV_DVxxcr7Vr-pJQEtxmvl7qfW1r98w\",\"paragraphs\":[{\"formatting\":[{\"end\":14,\"start\":0,\"values\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false}}],\"id\":\"p1\",\"text\":\"The fox waits.\"}]},\"modelVersion\":\"1\",\"proposals\":[{\"baseFingerprint\":\"_HuSzBQOVikqXV_DVxxcr7Vr-pJQEtxmvl7qfW1r98w\",\"content\":{\"formatting\":[{\"end\":6,\"start\":0,\"values\":{\"bold\":false,\"italic\":true,\"strikethrough\":false,\"underline\":false}}],\"text\":\"quick \"},\"id\":\"insert-1\",\"kind\":\"insert\",\"samePointOrder\":0,\"state\":\"pending\",\"target\":{\"association\":\"after\",\"offset\":4,\"paragraphId\":\"p1\",\"type\":\"point\"}}],\"serializationProfile\":\"json-jcs-1\"}",
+  "reorderedJson": "{\"proposals\":[{\"samePointOrder\":0,\"content\":{\"formatting\":[{\"values\":{\"underline\":false,\"strikethrough\":false,\"bold\":false,\"italic\":true},\"end\":6,\"start\":0}],\"text\":\"quick \"},\"target\":{\"offset\":4,\"type\":\"point\",\"association\":\"after\",\"paragraphId\":\"p1\"},\"kind\":\"insert\",\"state\":\"pending\",\"baseFingerprint\":\"_HuSzBQOVikqXV_DVxxcr7Vr-pJQEtxmvl7qfW1r98w\",\"id\":\"insert-1\"}],\"acceptedState\":{\"paragraphs\":[{\"formatting\":[{\"values\":{\"strikethrough\":false,\"underline\":false,\"italic\":false,\"bold\":false},\"end\":14,\"start\":0}],\"text\":\"The fox waits.\",\"id\":\"p1\"}],\"fingerprint\":\"_HuSzBQOVikqXV_DVxxcr7Vr-pJQEtxmvl7qfW1r98w\"},\"serializationProfile\":\"json-jcs-1\",\"modelVersion\":\"1\"}"
+}
