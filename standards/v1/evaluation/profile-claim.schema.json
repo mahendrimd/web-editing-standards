@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Web Editing Standards mapping-profile claim package manifest version 2",
+  "title": "Web Editor Revisions mapping-profile claim package manifest version 2",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -15,7 +15,7 @@
     "limitations"
   ],
   "properties": {
-    "claimFormat": {"const": "web-editing-standards-profile-claim-2"},
+    "claimFormat": {"const": "web-editor-revisions-profile-claim-2"},
     "publication": {
       "type": "object",
       "additionalProperties": false,

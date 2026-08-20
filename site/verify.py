@@ -11,7 +11,7 @@ from pathlib import Path
 from urllib.parse import unquote, urljoin, urlparse
 
 
-DEFAULT_BASE_URL = "/web-editing-standards"
+DEFAULT_BASE_URL = "/web-editor-revisions"
 
 
 @dataclass
@@ -145,7 +145,7 @@ def verify(output: Path, base_url: str) -> None:
     json_files = [
         output / "v1/publication.json",
         output / "search-index.json",
-        output / "v1/schema/web-editing-standards-v1.schema.json",
+        output / "v1/schema/web-editor-revisions-v1.schema.json",
         output / "v1/conformance/artifacts/profile-claim.schema.json",
         output / "v1/conformance/artifacts/profile-requirements.json",
         output / "v1/conformance/artifacts/fixtures/serialization-cases.json",

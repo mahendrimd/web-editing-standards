@@ -1,8 +1,8 @@
-# Web Editing Standards publication validation report
+# Web Editor Revisions publication validation report
 
 Date: 2026-08-19
-Validated input set: `web-editing-standards-validation-draft-1`  
-Maintainer-reviewed publication set: `web-editing-standards-v1`
+Validated input set: `web-editor-revisions-validation-draft-1`
+Maintainer-reviewed publication set: `web-editor-revisions-v1`
 Result: Pass in project-maintainer validation; identifier harmonization revalidated
 
 ## Scope
@@ -55,14 +55,14 @@ The following commands passed from the repository root:
 PYTHONDONTWRITEBYTECODE=1 python3 standards/v1/evaluation/run_conformance.py
 PYTHONDONTWRITEBYTECODE=1 python3 standards/v1/evaluation/validate_profile_claim.py --check-catalog
 PYTHONDONTWRITEBYTECODE=1 python3 standards/v1/evaluation/validate_profile_claim.py --self-test
-PYTHONPYCACHEPREFIX=/tmp/wes-validation-pycache python3 -m py_compile standards/v1/evaluation/run_conformance.py standards/v1/evaluation/validate_profile_claim.py
+PYTHONPYCACHEPREFIX=/tmp/wer-validation-pycache python3 -m py_compile standards/v1/evaluation/run_conformance.py standards/v1/evaluation/validate_profile_claim.py
 ```
 
 The validation also used strict standard-library JSON parsing with duplicate-member rejection, Draft 2020-12 meta-schema checks, catalog/profile matrix correlation, and a local relative-link and GitHub-style heading-anchor check over the publication tree.
 
 ## Post-review identifier harmonization
 
-After maintainer review, the project adopted one consistent consumer-facing and normative identity matching the repository: **Web Editing Standards** and `web-editing-standards`. The publication directory, document titles, schema filenames, schema descriptions, profile identifiers, claim-format selector, accepted-state fingerprint domain, evaluator paths, commands, and internal links were renamed together. No superseded project title, slug, or filename remains in the active tree.
+After maintainer review, the project adopted one consistent consumer-facing and normative identity matching the repository: **Web Editor Revisions** and `web-editor-revisions`. The publication directory, document titles, schema filenames, schema descriptions, profile identifiers, claim-format selector, accepted-state fingerprint domain, evaluator paths, commands, and internal links were renamed together. No superseded project title, slug, or filename remains in the active tree.
 
 Because the domain separator is part of the normative accepted-state fingerprint projection, the canonical fixture fingerprint and its exact JCS bytes were regenerated rather than treated as editorial text. The published core suite then passed 13/13 groups; the six-direction requirements catalog and claim schema validated; all 12 positive and 11 negative claim packages behaved as required; both published evaluators compiled; and relative links remained resolvable. The harmonization changes identifiers but does not alter the revision semantics, scope, conformance roles, or mapping behavior.
 
@@ -74,4 +74,4 @@ No missing fact or normative contradiction was identified by the project-maintai
 
 The release commit preserves the complete versioned project publication. Closeout retained the normative standard and schema, three mapping profiles, executable evaluation package, curated supporting and contradictory evidence, limitations and reassessment triggers, this validation record, and all twelve active material decision records under this publication directory. Operational tracking material and duplicate working assets were excluded after the publication passed the executable, schema, JSON, link, anchor, provenance, and naming checks recorded above.
 
-The compacted repository state is identified by publication set and release tag `web-editing-standards-v1`. Repository-local agent skills and their lock file remain available locally but are excluded from the compacted tracked tree under the repository's root ignore policy.
+The compacted repository state is identified by publication set and release tag `web-editor-revisions-v1`. Repository-local agent skills and their lock file remain available locally but are excluded from the compacted tracked tree under the repository's root ignore policy.

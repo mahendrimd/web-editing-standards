@@ -3,7 +3,7 @@
   "coreChecks": 13,
   "profiles": [
     {
-      "id": "web-editing-standards.wordprocessingml-tracked-revisions",
+      "id": "web-editor-revisions.wordprocessingml-tracked-revisions",
       "version": "1",
       "document": "../profiles/wordprocessingml.md",
       "directions": [
@@ -75,7 +75,7 @@
       ]
     },
     {
-      "id": "web-editing-standards.odf-text-change-tracking",
+      "id": "web-editor-revisions.odf-text-change-tracking",
       "version": "1",
       "document": "../profiles/odf-text.md",
       "directions": [
@@ -143,7 +143,7 @@
       ]
     },
     {
-      "id": "web-editing-standards.reference-web-editor-track-changes",
+      "id": "web-editor-revisions.reference-web-editor-track-changes",
       "version": "1",
       "document": "../profiles/reference-web-editor.md",
       "directions": [

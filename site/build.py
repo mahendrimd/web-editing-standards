@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Build the Web Editing Standards static publication site."""
+"""Build the Web Editor Revisions static publication site."""
 
 from __future__ import annotations
 
 import argparse
 import html
 import json
+import os
 import re
 import shutil
 from dataclasses import dataclass
@@ -18,9 +19,18 @@ import markdown
 
 ROOT = Path(__file__).resolve().parents[1]
 SITE_DIR = ROOT / "site"
-REPOSITORY_URL = "https://github.com/mahendrimd/web-editing-standards"
-CANONICAL_ORIGIN = "https://mahendrimd.github.io"
-DEFAULT_BASE_URL = "/web-editing-standards"
+GITHUB_REPOSITORY = os.environ.get(
+    "GITHUB_REPOSITORY", "mahendrimd/web-editor-revisions"
+)
+GITHUB_OWNER = GITHUB_REPOSITORY.partition("/")[0]
+REPOSITORY_URL = (
+    f"{os.environ.get('GITHUB_SERVER_URL', 'https://github.com').rstrip('/')}"
+    f"/{GITHUB_REPOSITORY}"
+)
+CANONICAL_ORIGIN = os.environ.get(
+    "PAGES_ORIGIN", f"https://{GITHUB_OWNER}.github.io"
+).rstrip("/")
+DEFAULT_BASE_URL = "/web-editor-revisions"
 
 
 @dataclass(frozen=True)
@@ -45,7 +55,7 @@ CORE_PAGES = [
     Page(
         ROOT / "standards/v1/standard.md",
         "/v1/standard/",
-        "Web Editing Standards",
+        "Web Editor Revisions",
         "Normative core semantics, serialization, loss reporting, and conformance requirements.",
         "Normative · Version 1",
         "standard",
@@ -54,7 +64,7 @@ CORE_PAGES = [
         None,
         "/v1/schema/",
         "Normative JSON Schema",
-        "The structural contract for Web Editing Standards version 1 interchange documents.",
+        "The structural contract for Web Editor Revisions version 1 interchange documents.",
         "Normative · Version 1",
         "schema",
     ),
@@ -295,7 +305,7 @@ def global_header(base_url: str, current: str) -> str:
     return f"""
     <header class="site-header">
       <div class="header-inner">
-        <a class="site-name" href="{route_url(base_url, '/')}">Web Editing Standards</a>
+        <a class="site-name" href="{route_url(base_url, '/')}">Web Editor Revisions</a>
         <span class="version-mark">v1</span>
         <nav class="global-nav" aria-label="Primary navigation">
           <a{active_class(current, "/v1/standard/")} href="{route_url(base_url, '/v1/standard/')}">Standard</a>
@@ -342,8 +352,8 @@ def render_page(
     canonical = f"{CANONICAL_ORIGIN}{route_url(base_url, page.route)}"
     document_title = (
         page.title
-        if page.title == "Web Editing Standards"
-        else f"{page.title} · Web Editing Standards"
+        if page.title == "Web Editor Revisions"
+        else f"{page.title} · Web Editor Revisions"
     )
     source = source_override or source_url(page.source)
     source_link = (
@@ -399,7 +409,7 @@ def render_home(base_url: str) -> str:
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Web Editing Standards</title>
+  <title>Web Editor Revisions</title>
   <meta name="description" content="A portable model for pending revisions in text-focused Web editors.">
   <link rel="canonical" href="{CANONICAL_ORIGIN}{route_url(base_url, '/')}">
   <link rel="stylesheet" href="{route_url(base_url, '/assets/style.css')}">
@@ -488,13 +498,13 @@ def render_profiles_index(base_url: str) -> str:
 
 
 def render_schema_page(base_url: str) -> str:
-    schema_path = ROOT / "standards/v1/schema/web-editing-standards-v1.schema.json"
+    schema_path = ROOT / "standards/v1/schema/web-editor-revisions-v1.schema.json"
     schema = html.escape(schema_path.read_text())
-    raw_url = route_url(base_url, "/v1/schema/web-editing-standards-v1.schema.json")
+    raw_url = route_url(base_url, "/v1/schema/web-editor-revisions-v1.schema.json")
     return f"""
 <h1>Normative JSON Schema</h1>
 <p>The schema defines the structural contract for version 1 interchange documents. It applies together with the semantic requirements in the <a href="{route_url(base_url, '/v1/standard/')}">core standard</a>.</p>
-<p class="artifact-actions"><a class="primary-button" href="{raw_url}" download>Download schema</a><a href="{REPOSITORY_URL}/blob/main/standards/v1/schema/web-editing-standards-v1.schema.json">View source</a></p>
+<p class="artifact-actions"><a class="primary-button" href="{raw_url}" download>Download schema</a><a href="{REPOSITORY_URL}/blob/main/standards/v1/schema/web-editor-revisions-v1.schema.json">View source</a></p>
 <h2 id="schema-source">Schema source</h2>
 <pre class="schema-view"><code>{schema}</code></pre>
 """
@@ -525,11 +535,11 @@ def render_decisions_index(base_url: str) -> str:
 def render_about(base_url: str) -> str:
     return f"""
 <h1>About this publication</h1>
-<p>Web Editing Standards is an independent implementer specification for portable pending revisions in text-focused Web editors. It is maintained by the repository owner and published as a versioned, reproducible set.</p>
+<p>Web Editor Revisions is an independent implementer specification for portable pending revisions in text-focused Web editors. It is maintained by the repository owner and published as a versioned, reproducible set.</p>
 <h2 id="independence">Independence</h2>
 <p>The project is not an official standard and is not affiliated with, authorized, sponsored, endorsed, or approved by any referenced vendor, open-source project, or standards organization. Product and organization names identify technical sources and interoperability boundaries only.</p>
 <h2 id="publication-boundary">Publication boundary</h2>
-<p>Version 1 is identified by the release tag <code>web-editing-standards-v1</code>. The core, serialization profile, and mapping profiles version independently. Claims should remain pinned to the exact publication commit and measured implementation boundary.</p>
+<p>Version 1 is identified by the release tag <code>web-editor-revisions-v1</code>. The core, serialization profile, and mapping profiles version independently. Claims should remain pinned to the exact publication commit and measured implementation boundary.</p>
 <h2 id="source-and-license">Source and license</h2>
 <p>The complete source is available on <a href="{REPOSITORY_URL}">GitHub</a>. Original specification text, schemas, evaluation code, fixtures, and supporting material are licensed under the <a href="{route_url(base_url, '/license/')}">Apache License 2.0</a>.</p>
 """
@@ -574,8 +584,8 @@ def write_page(output_dir: Path, route: str, markup: str) -> None:
 
 
 def copy_artifacts(output_dir: Path) -> None:
-    schema_source = ROOT / "standards/v1/schema/web-editing-standards-v1.schema.json"
-    schema_target = output_dir / "v1/schema/web-editing-standards-v1.schema.json"
+    schema_source = ROOT / "standards/v1/schema/web-editor-revisions-v1.schema.json"
+    schema_target = output_dir / "v1/schema/web-editor-revisions-v1.schema.json"
     schema_target.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(schema_source, schema_target)
 
@@ -607,9 +617,9 @@ def publication_metadata(base_url: str, decision_pages: list[Page]) -> dict[str,
         return result
 
     return {
-        "publication": "Web Editing Standards",
-        "publicationSet": "web-editing-standards-v1",
-        "releaseTag": "web-editing-standards-v1",
+        "publication": "Web Editor Revisions",
+        "publicationSet": "web-editor-revisions-v1",
+        "releaseTag": "web-editor-revisions-v1",
         "status": "maintainer-reviewed",
         "coreModelVersion": "1",
         "serializationProfile": "json-jcs-1",
@@ -619,7 +629,7 @@ def publication_metadata(base_url: str, decision_pages: list[Page]) -> dict[str,
         "informative": [entry(page) for page in CORE_PAGES if page.status.startswith("Informative")],
         "decisions": [entry(page) for page in decision_pages],
         "artifacts": {
-            "schema": f"{CANONICAL_ORIGIN}{route_url(base_url, '/v1/schema/web-editing-standards-v1.schema.json')}",
+            "schema": f"{CANONICAL_ORIGIN}{route_url(base_url, '/v1/schema/web-editor-revisions-v1.schema.json')}",
             "evaluation": f"{CANONICAL_ORIGIN}{route_url(base_url, '/v1/conformance/artifacts/')}",
         },
     }
@@ -648,12 +658,12 @@ def write_support_files(
         )
     (output_dir / "search-index.json").write_text(json.dumps(search_entries, separators=(",", ":")))
 
-    llms = f"""# Web Editing Standards
+    llms = f"""# Web Editor Revisions
 
 > Independent implementer specification for portable pending revisions in text-focused Web editors.
 
 Status: Maintainer-reviewed version 1
-Publication set: web-editing-standards-v1
+Publication set: web-editor-revisions-v1
 Core model: 1
 Serialization profile: json-jcs-1
 Canonical publication: {CANONICAL_ORIGIN}{route_url(base_url, '/v1/')}
@@ -662,7 +672,7 @@ Repository: {REPOSITORY_URL}
 ## Normative documents
 
 - Core standard: {CANONICAL_ORIGIN}{route_url(base_url, '/v1/standard/')}
-- JSON Schema: {CANONICAL_ORIGIN}{route_url(base_url, '/v1/schema/web-editing-standards-v1.schema.json')}
+- JSON Schema: {CANONICAL_ORIGIN}{route_url(base_url, '/v1/schema/web-editor-revisions-v1.schema.json')}
 - Mapping profiles: {CANONICAL_ORIGIN}{route_url(base_url, '/v1/profiles/')}
 
 ## Implementation and evaluation
@@ -715,7 +725,7 @@ def build(output_dir: Path, base_url: str) -> None:
     routes = source_route_map(all_source_pages)
     rendered: list[tuple[Page, str]] = []
 
-    home_page = Page(None, "/", "Web Editing Standards", "A portable model for pending revisions in text-focused Web editors.", "", "home")
+    home_page = Page(None, "/", "Web Editor Revisions", "A portable model for pending revisions in text-focused Web editors.", "", "home")
     home = render_home(base_url)
     write_page(output_dir, "/", home)
     rendered.append((home_page, home))
@@ -728,7 +738,7 @@ def build(output_dir: Path, base_url: str) -> None:
         elif page.route == "/v1/schema/":
             content = render_schema_page(base_url)
             toc = [{"id": "schema-source", "name": "Schema source", "children": []}]
-            source_override = f"{REPOSITORY_URL}/blob/main/standards/v1/schema/web-editing-standards-v1.schema.json"
+            source_override = f"{REPOSITORY_URL}/blob/main/standards/v1/schema/web-editor-revisions-v1.schema.json"
         elif page.route == "/v1/decisions/":
             content = render_decisions_index(base_url)
             toc = [{"id": "maintenance-use", "name": "Maintenance use", "children": []}]

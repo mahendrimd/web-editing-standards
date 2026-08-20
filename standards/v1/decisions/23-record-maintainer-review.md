@@ -11,11 +11,11 @@ Superseded by:
 
 ## Question
 
-Does the project maintainer designate the reviewed Web Editing Standards version 1 publication as the maintained result of this project, with its documented subset, limitations, unassigned long-term stewardship, version boundary, and profile-scoped conformance claims; or does the validation evidence require revision first?
+Does the project maintainer designate the reviewed Web Editor Revisions version 1 publication as the maintained result of this project, with its documented subset, limitations, unassigned long-term stewardship, version boundary, and profile-scoped conformance claims; or does the validation evidence require revision first?
 
 ## Resolution
 
-The project maintainer designates the reviewed Web Editing Standards version 1 publication as the maintained result of this project. The designation covers the deliberately bounded subset, its explicit limitations and reassessment triggers, independently versioned mapping profiles, profile- and direction-scoped conformance claims, the present version boundary, and the absence of an assigned permanent publication authority or long-term steward. It is an internal project decision, not approval by a vendor, open-source project, standards organization, or independent certification body.
+The project maintainer designates the reviewed Web Editor Revisions version 1 publication as the maintained result of this project. The designation covers the deliberately bounded subset, its explicit limitations and reassessment triggers, independently versioned mapping profiles, profile- and direction-scoped conformance claims, the present version boundary, and the absence of an assigned permanent publication authority or long-term steward. It is an internal project decision, not approval by a vendor, open-source project, standards organization, or independent certification body.
 
 ### Rationale
 
