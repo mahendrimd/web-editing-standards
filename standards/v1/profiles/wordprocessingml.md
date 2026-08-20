@@ -2,7 +2,7 @@
 
 Project status: Maintainer-reviewed
 
-Profile identifier: `web-editing-standards.wordprocessingml-tracked-revisions`
+Profile identifier: `web-editor-revisions.wordprocessingml-tracked-revisions`
 
 Profile version: `1`
 
@@ -12,11 +12,11 @@ Canonical serialization profile: `json-jcs-1`
 
 ## 1. Purpose and conformance language
 
-This profile defines direction-specific mappings between the Web Editing Standards core and a narrow WordprocessingML tracked-revision subset. It does not claim that every WordprocessingML document, every Microsoft Word behavior, or every Open XML SDK operation maps to the core.
+This profile defines direction-specific mappings between the Web Editor Revisions core and a narrow WordprocessingML tracked-revision subset. It does not claim that every WordprocessingML document, every Microsoft Word behavior, or every Open XML SDK operation maps to the core.
 
 The key words **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT**, and **MAY** are interpreted as described in BCP 14 when they appear in all capitals. Sections 1 through 10 are normative. Section 11 is informative.
 
-An implementation conforms separately for `wordprocessingml-to-core`, `core-to-wordprocessingml`, or both. It MUST also conform as a mapping adapter under the [Web Editing Standards core](../standard.md).
+An implementation conforms separately for `wordprocessingml-to-core`, `core-to-wordprocessingml`, or both. It MUST also conform as a mapping adapter under the [Web Editor Revisions core](../standard.md).
 
 ## 2. Pinned upstream boundary
 

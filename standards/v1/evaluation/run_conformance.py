@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Published executable fixtures for the Web Editing Standards v1 subset."""
+"""Published executable fixtures for the Web Editor Revisions v1 subset."""
 
 from __future__ import annotations
 
@@ -18,7 +18,7 @@ from jsonschema import Draft202012Validator, FormatChecker
 
 
 ROOT = Path(__file__).resolve().parent
-SCHEMA_PATH = ROOT.parent / "schema" / "web-editing-standards-v1.schema.json"
+SCHEMA_PATH = ROOT.parent / "schema" / "web-editor-revisions-v1.schema.json"
 FIXTURE_PATH = ROOT / "fixtures" / "serialization-cases.json"
 SAFE_INTEGER = 9_007_199_254_740_991
 PROPERTIES = ("italic", "bold", "underline", "strikethrough")
@@ -193,7 +193,7 @@ def paragraph(identifier: str, text: str, **values: bool) -> dict[str, Any]:
 
 def accepted_projection(accepted_state: dict[str, Any]) -> dict[str, Any]:
     return {
-        "domain": "web-editing-standards.accepted-state",
+        "domain": "web-editor-revisions.accepted-state",
         "modelVersion": "1",
         "serializationProfile": "json-jcs-1",
         "paragraphs": accepted_state["paragraphs"],

@@ -2,7 +2,7 @@
 
 Project status: Maintainer-reviewed
 
-Profile identifier: `web-editing-standards.reference-web-editor-track-changes`
+Profile identifier: `web-editor-revisions.reference-web-editor-track-changes`
 
 Profile version: `1`
 
@@ -14,11 +14,11 @@ Canonical serialization profile: `json-jcs-1`
 
 “Reference Web Editor” is a project-local neutral label for the publicly documented upstream implementation snapshot linked in Section 2. It is not an upstream product name and does not imply affiliation, approval, sponsorship, or endorsement.
 
-This profile defines direction-specific mappings between the Web Editing Standards core and that bounded editor-native track-changes model. It standardizes observable mappings, not upstream internals, UI, licensing, deployment, or a preferred integration API.
+This profile defines direction-specific mappings between the Web Editor Revisions core and that bounded editor-native track-changes model. It standardizes observable mappings, not upstream internals, UI, licensing, deployment, or a preferred integration API.
 
 The key words **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT**, and **MAY** are interpreted as described in BCP 14 when they appear in all capitals. Sections 1 through 10 are normative. Section 11 is informative.
 
-Conformance is separate for `reference-web-editor-to-core`, `core-to-reference-web-editor`, or both and also requires mapping-adapter conformance to the [Web Editing Standards core](../standard.md).
+Conformance is separate for `reference-web-editor-to-core`, `core-to-reference-web-editor`, or both and also requires mapping-adapter conformance to the [Web Editor Revisions core](../standard.md).
 
 ## 2. Pinned upstream boundary
 

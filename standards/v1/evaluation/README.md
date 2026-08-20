@@ -22,7 +22,7 @@ From the repository root, run:
 python3 standards/v1/evaluation/run_conformance.py
 ```
 
-The command reads the publication's [normative schema](../schema/web-editing-standards-v1.schema.json), loads the literal serialization fixture with duplicate-member detection, and executes all 13 fixture groups. A nonzero exit status means at least one group failed. Use `--list` to list the groups without running them.
+The command reads the publication's [normative schema](../schema/web-editor-revisions-v1.schema.json), loads the literal serialization fixture with duplicate-member detection, and executes all 13 fixture groups. A nonzero exit status means at least one group failed. Use `--list` to list the groups without running them.
 
 The runner covers strict JSON parsing, the narrow JCS profile, accepted-state fingerprints, all six proposal kinds, exact projections, selective resolution, target remapping, lifecycle and persistence observations, extensions, structured mapping outcomes, loss authorization, rollback, and safety outcomes. The fixture builders inside the runner are test authoring code, not another interchange representation.
 

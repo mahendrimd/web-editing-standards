@@ -2,7 +2,7 @@
 
 Status: Informative evidence snapshot through 2026-08-18
 
-This index curates the evidence that materially supports or limits the accepted Web Editing Standards version 1 publication. It is not a normative source and it is not an adoption census. Normative requirements remain in the [core standard](standard.md), its schema, and the mapping profiles.
+This index curates the evidence that materially supports or limits the accepted Web Editor Revisions version 1 publication. It is not a normative source and it is not an adoption census. Normative requirements remain in the [core standard](standard.md), its schema, and the mapping profiles.
 
 ## Evidence-to-publication matrix
 

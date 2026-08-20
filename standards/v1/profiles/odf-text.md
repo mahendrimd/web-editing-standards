@@ -2,7 +2,7 @@
 
 Project status: Maintainer-reviewed
 
-Profile identifier: `web-editing-standards.odf-text-change-tracking`
+Profile identifier: `web-editor-revisions.odf-text-change-tracking`
 
 Profile version: `1`
 
@@ -12,11 +12,11 @@ Canonical serialization profile: `json-jcs-1`
 
 ## 1. Purpose and conformance language
 
-This profile defines direction-specific mappings between the Web Editing Standards core and a bounded OpenDocument Text change-tracking subset. It deliberately does not claim coverage of all ODF text structures or application-specific tracked-change behavior.
+This profile defines direction-specific mappings between the Web Editor Revisions core and a bounded OpenDocument Text change-tracking subset. It deliberately does not claim coverage of all ODF text structures or application-specific tracked-change behavior.
 
 The key words **MUST**, **MUST NOT**, **SHOULD**, **SHOULD NOT**, and **MAY** are interpreted as described in BCP 14 when they appear in all capitals. Sections 1 through 10 are normative. Section 11 is informative.
 
-Conformance is separate for `odf-text-to-core`, `core-to-odf-text`, or both and also requires mapping-adapter conformance to the [Web Editing Standards core](../standard.md).
+Conformance is separate for `odf-text-to-core`, `core-to-odf-text`, or both and also requires mapping-adapter conformance to the [Web Editor Revisions core](../standard.md).
 
 ## 2. Pinned upstream boundary
 

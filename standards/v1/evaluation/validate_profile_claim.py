@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate a reproducible Web Editing Standards mapping-profile claim package."""
+"""Validate a reproducible Web Editor Revisions mapping-profile claim package."""
 
 from __future__ import annotations
 
@@ -349,7 +349,7 @@ def run_self_test(schema: dict[str, Any], catalog: dict[str, Any]) -> None:
                 required_fixture_ids(direction, capabilities, source_persistence_claimed)
             )
             return {
-                "claimFormat": "web-editing-standards-profile-claim-2",
+                "claimFormat": "web-editor-revisions-profile-claim-2",
                 "publication": {
                     "commit": "0123456789abcdef",
                     "modelVersion": "1",

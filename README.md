@@ -1,6 +1,6 @@
-# Web Editing Standards
+# Web Editor Revisions
 
-Web Editing Standards is an independent implementer specification for portable pending revisions in text-focused Web editors. Read the [maintainer-reviewed version 1 publication](standards/v1/README.md) or browse the [Web publication](https://mahendrimd.github.io/web-editing-standards/).
+Web Editor Revisions is an independent implementer specification for portable pending revisions in text-focused Web editors. Read the [maintainer-reviewed version 1 publication](standards/v1/README.md) or browse the [Web publication](https://mahendrimd.github.io/web-editor-revisions/).
 
 ## Independent project
 

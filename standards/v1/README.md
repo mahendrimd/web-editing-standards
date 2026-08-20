@@ -1,8 +1,8 @@
-# Web Editing Standards publication
+# Web Editor Revisions publication
 
 Project status: Maintainer-reviewed version 1
-Publication set: `web-editing-standards-v1`  
-Release tag: `web-editing-standards-v1`
+Publication set: `web-editor-revisions-v1`
+Release tag: `web-editor-revisions-v1`
 Core semantic model: `1`  
 Canonical serialization profile: `json-jcs-1`
 
@@ -16,8 +16,8 @@ This is an independent implementer project maintained by its repository owner. I
 
 Normative material:
 
-- [Web Editing Standards](standard.md) — core semantics, canonical serialization, loss reporting, and role-specific conformance;
-- [normative JSON Schema](schema/web-editing-standards-v1.schema.json) — the structural contract used with the semantic requirements;
+- [Web Editor Revisions](standard.md) — core semantics, canonical serialization, loss reporting, and role-specific conformance;
+- [normative JSON Schema](schema/web-editor-revisions-v1.schema.json) — the structural contract used with the semantic requirements;
 - [WordprocessingML Tracked Revisions Mapping Profile](profiles/wordprocessingml.md);
 - [ODF Text Change Tracking Mapping Profile](profiles/odf-text.md); and
 - [Reference Web Editor Track Changes Mapping Profile](profiles/reference-web-editor.md).

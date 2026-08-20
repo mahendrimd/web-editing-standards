@@ -13,5 +13,5 @@ python3 site/verify.py
 ```
 
 The default build uses the GitHub project-site base path
-`/web-editing-standards` and writes static files to `_site/`. For a local
+`/web-editor-revisions` and writes static files to `_site/`. For a local
 root-path preview, pass `--base-url /` to both commands.

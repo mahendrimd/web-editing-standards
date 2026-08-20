@@ -1,4 +1,4 @@
-# Web Editing Standards
+# Web Editor Revisions
 
 Project status: Maintainer-reviewed
 
@@ -8,7 +8,7 @@ Canonical serialization profile: `json-jcs-1`
 
 ## 1. Purpose
 
-Web Editing Standards defines a vendor-neutral interchange model for pending revisions in text-focused Web editors. It enables an editor, import/export adapter, or integration to preserve independently reviewable changes, resolve them predictably, and report when a mapping cannot preserve their meaning.
+Web Editor Revisions defines a vendor-neutral interchange model for pending revisions in text-focused Web editors. It enables an editor, import/export adapter, or integration to preserve independently reviewable changes, resolve them predictably, and report when a mapping cannot preserve their meaning.
 
 The model addresses a gap between editor-specific suggestion systems and document-format-specific tracked-change models. It standardizes portable data and observable outcomes. It does not standardize an editor's user interface, runtime data structures, collaboration algorithm, or private storage.
 
@@ -33,7 +33,7 @@ This version normatively uses:
 - [JSON Schema Draft 2020-12](https://json-schema.org/draft/2020-12); and
 - SHA-256 as specified by [FIPS PUB 180-4](https://csrc.nist.gov/pubs/fips/180-4/upd1/final).
 
-Requirements in this document and in the [normative JSON Schema](schema/web-editing-standards-v1.schema.json) apply together. The schema defines the structural contract. This document defines semantic constraints, resolution behavior, canonicalization, mapping outcomes, and conformance requirements that JSON Schema cannot fully express. If an apparent conflict is found, an implementation MUST NOT guess; it MUST report the specification defect to the maintainers and MUST NOT claim conformance for the affected case until the conflict is resolved.
+Requirements in this document and in the [normative JSON Schema](schema/web-editor-revisions-v1.schema.json) apply together. The schema defines the structural contract. This document defines semantic constraints, resolution behavior, canonicalization, mapping outcomes, and conformance requirements that JSON Schema cannot fully express. If an apparent conflict is found, an implementation MUST NOT guess; it MUST report the specification defect to the maintainers and MUST NOT claim conformance for the affected case until the conflict is resolved.
 
 Examples and rationale are informative unless explicitly identified as normative.
 
@@ -326,7 +326,7 @@ The accepted-state fingerprint input is exactly this JSON value, where `paragrap
 
 ```json
 {
-  "domain": "web-editing-standards.accepted-state",
+  "domain": "web-editor-revisions.accepted-state",
   "modelVersion": "1",
   "serializationProfile": "json-jcs-1",
   "paragraphs": []
@@ -577,6 +577,6 @@ Mapping profiles have independent versions and pin their upstream source boundar
 
 Additive corrections that do not change normative meaning MAY update prose or tests without changing version values. Errata that change normative behavior MUST identify their compatibility impact and follow the version rules above. Published versions SHOULD be preserved with explicit document metadata and matching Git tags.
 
-This document is the accepted version 1 result in publication set `web-editing-standards-v1`. A permanent publication authority, schema URI, extension registry authority, and long-term maintenance community have not yet been assigned. A future publication authority MUST assign stable identifiers without silently changing the normative schema contents. Until then, the repository path, release tag, and Git history identify this version; claims SHOULD include the exact commit identifier.
+This document is the accepted version 1 result in publication set `web-editor-revisions-v1`. A permanent publication authority, schema URI, extension registry authority, and long-term maintenance community have not yet been assigned. A future publication authority MUST assign stable identifiers without silently changing the normative schema contents. Until then, the repository path, release tag, and Git history identify this version; claims SHOULD include the exact commit identifier.
 
 The publication's [evidence index](evidence.md) and [decision provenance](provenance.md) are informative maintenance inputs. They preserve the supporting and contradictory evidence and the rationale for the current boundaries without adding requirements. The [publication index](README.md) identifies the complete accepted set and adoption path.
