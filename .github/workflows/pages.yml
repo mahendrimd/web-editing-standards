@@ -1,0 +1,71 @@
+name: Publish website
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: site/requirements.txt
+
+      - name: Install site dependency
+        run: python -m pip install -r site/requirements.txt
+
+      - name: Validate publication
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+        run: |
+          python standards/v1/evaluation/run_conformance.py
+          python standards/v1/evaluation/validate_profile_claim.py --check-catalog
+          python standards/v1/evaluation/validate_profile_claim.py --self-test
+
+      - name: Build website
+        run: python site/build.py --base-url /web-editing-standards
+
+      - name: Verify website
+        run: python site/verify.py --base-url /web-editing-standards
+
+      - name: Configure GitHub Pages
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5
+
+      - name: Upload GitHub Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
